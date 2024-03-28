@@ -9,8 +9,9 @@ import { useDispatch } from 'react-redux';
 import { userCurrent } from './JS/userSlice/userSlice';
 import Profil from './components/Account/Profil';
 import PrivateRoute from './Routes/PrivateRoutes';
-// import PrivateRoutee from './Routes/PrivateRoutes';
 import Accueil from './components/Accueil/Accueil';
+import PrivateRoutelogin from './Routes/PrivateRouteLogin';
+
 
 
 function App() {
@@ -33,11 +34,15 @@ const dispatch = useDispatch();
       <Nav />
       <Routes>
         <Route path="/" element={<Accueil />} />
-        {/* <Route  element={<PrivateRoutee />}> */}
+        {/* <Route path="/account/login" element={<Login />} /> */}
+        <Route  element={<PrivateRoutelogin />}>
         <Route path="/account/login" element={<Login />} />
-        {/* </Route>{" "} */}
+        </Route>{" "}
         
+        {/* <Route path="/account/signup" element={<Register />} /> */}
+        <Route  element={<PrivateRoutelogin />}>
         <Route path="/account/signup" element={<Register />} />
+        </Route>{" "}
         <Route  element={<PrivateRoute />}>
         <Route path="/account/profile" element={<Profil />} />
         </Route>{" "}

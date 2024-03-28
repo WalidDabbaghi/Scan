@@ -25,7 +25,7 @@ const registerController = async (req, res) => {
           const salt = 10;
           const genSalt = await bcrypt.genSaltSync(salt);
           const hashedPassword = await bcrypt.hashSync(password, genSalt);
-          console.log(hashedPassword);
+          // console.log(hashedPassword);
           newUser.password = hashedPassword;
       
           //save the user
